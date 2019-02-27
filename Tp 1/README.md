@@ -142,9 +142,12 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
     ^C10 packets captured
     10 packets received by filter
     0 packets dropped by kernel
- 
- [Voir ping.pcap](/Tp%201/pcap/ping.pcap)
- ![alt text](/Tp%201/screens/ping.PNG "Whireshark2")
+    ```
+
+
+
+     [Voir ping.pcap](/Tp%201/pcap/ping.pcap)
+     ![alt text](/Tp%201/screens/ping.PNG "Whireshark")
 
 ## Communication simple entre deux machines
 
@@ -241,7 +244,7 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
 
     ```
 
-    [udp chat](/Tp%201/img/udp.PNG "udp")
+    ![alt text](/Tp%201/img/udp.PNG "udp")
 
 * Sur client1 (2nd shell) : 
 
@@ -271,7 +274,7 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
 
     [Voir nc-udp.pcap](/Tp%201/pcap/nc-udp.pcap)
 
-    [nc-udp](/Tp%201/img/nc-udp.PNG "nc-udp")
+    ![alt text](/Tp%201/img/nc-udp.PNG "nc-udp")
 
     * Il y a bien une transmission de données faites entre un client et un serveur par le protocole UDP.
 
@@ -338,7 +341,7 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
 
     [Voir nc-tcp.pcap](/Tp%201/pcap/nc-tcp.pcap)
 
-    [nc-tcap](/Tp%201/img/nc-tcp.PNG "nc-tcap")
+    ![alt text](/Tp%201/img/nc-tcp.PNG "nc-tcap")
 
     * Ici nous avons des requêtes TCP qui passe par un tunnel cette fois-ci et nous avons un 'accusé de réception' a contrario du protocole UDP
 
@@ -385,7 +388,7 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
     ```
     
     [Voir firewall.pcap](/Tp%201/pcap/firewall.pcap)
-    ![firewall-tcap](/Tp%201/img/firewall.PNG "firewall-tcap")
+    ![alt text](/Tp%201/img/firewall.PNG "firewall-tcap")
 
 # III. Routage statique simple 
 
