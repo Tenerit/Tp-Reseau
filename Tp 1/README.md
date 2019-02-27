@@ -147,34 +147,32 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
 
 
      [Voir ping.pcap](/Tp%201/pcap/ping.pcap)
+     
+     
      ![alt text](/Tp%201/screens/ping.PNG "Whireshark")
 
 ## Communication simple entre deux machines
 
 ## 1. Mise en place
 
+Machine | `net1` | `net2`
+--- | --- | ---
+PC | `10.1.1.1` | `10.1.2.1`
+`client1.tp1.b2` | `10.1.1.2` | `10.1.2.2`
+`client2.tp1.b2` | `10.1.1.3` | X
+
 * Nouveau clone de VM 
 
     * Configuration d'une nouvelle ip statique
     ```
     [tener@client2 ~]$ cat /etc/sysconfig/network-scripts/ifcfg-enp0s8
-    TYPE=Ethernet
-    BOOTPROTO=static
-
-    NAME=enp0s8
-    DEVICE=enp0s8
-
-    ONBOOT=yes
-
     IPADDR=10.1.1.3
     NETMASK=255.255.255.0
     ```
-
-    * On valide
-        ```
+    ```
         ifdown enp0s8
         ifup enp0s8
-        ```
+    ```
 
     * Changement du nom de domaine : 
     ```
@@ -211,7 +209,11 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
         10.1.1.1 dev enp0s8 lladdr 0a:00:27:00:00:06 REACHABLE
         10.1.1.3 dev enp0s8 lladdr 08:00:27:26:2e:dc REACHABLE
         ```
+        
+        
     [Voir ping-2.pcap](/Tp%201/pcap/ping-2.pcap)
+    
+    
     ![alt text](/Tp%201/screens/ping-2.PNG "Whireshark2")
     
 ### UDP
@@ -246,7 +248,7 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
 
     ![alt text](/Tp%201/img/udp.PNG "udp")
 
-* Sur client1 (2nd shell) : 
+* Sur client1 (2nd shell ) : 
 
     ```
     ss -unp
@@ -295,7 +297,7 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
         success
         ```
 
-    * On lance netcat pour qu'il écoute sur le port TCP 8888 : 
+ * On lance netcat pour qu'il écoute sur le port TCP 8888 : 
 
         ```
         nc -l 8888
@@ -388,7 +390,11 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
     ```
     
     [Voir firewall.pcap](/Tp%201/pcap/firewall.pcap)
+    
+    
     ![alt text](/Tp%201/img/firewall.PNG "firewall-tcap")
+    
+    * Le firewall a bien empecher la connexion
 
 # III. Routage statique simple 
 
