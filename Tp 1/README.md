@@ -143,7 +143,7 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
     10 packets received by filter
     0 packets dropped by kernel
  
- [Voir ping.pcap](/TP%201/pcap/ping.pcap)
+ [Voir ping.pcap](/Tp%201/pcap/ping.pcap)
  
 
 ## Communication simple entre deux machines
@@ -208,8 +208,8 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
         10.1.1.1 dev enp0s8 lladdr 0a:00:27:00:00:06 REACHABLE
         10.1.1.3 dev enp0s8 lladdr 08:00:27:26:2e:dc REACHABLE
         ```
-    [Voir ping-2.pcap](/TP%201/pcap/ping-2.pcap)
-    ![alt text](/TP1/screens/ping-2.png "Whireshark2")
+    [Voir ping-2.pcap](/Tp%201/pcap/ping-2.pcap)
+    ![alt text](/Tp%201/screens/ping-2.png "Whireshark2")
     
 ### UDP
 
@@ -241,7 +241,7 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
 
     ```
 
-    <!--![alt text](/TP1/screens/chat.png "chat")-->
+    [alt text](/TP1/img/udp.png "udp")
 
 * Sur client1 (2nd shell) : 
 
@@ -269,9 +269,9 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
     0 packets dropped by kernel
     ```
 
-    <[Voir nc-udp.pcap](/TP%201/pcap/nc-udp.pcap)
+    [Voir nc-udp.pcap](/Tp%201/pcap/nc-udp.pcap)
 
-    [alt text](/TP%201/screens/nc-udp.png "nc-udp")
+    [alt text](/Tp%201/img/nc-udp.png "nc-udp")
 
     * Il y a bien une transmission de données faites entre un client et un serveur par le protocole UDP.
 
@@ -336,9 +336,9 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
     0 packets dropped by kernel
     ```
 
-    <[Voir nc-tcp.pcap](/TP%201/pcap/nc-tcp.pcap)
+    [Voir nc-tcp.pcap](/Tp%201/pcap/nc-tcp.pcap)
 
-    [alt text](/TP1/screens/nc-tcp.png "nc-tcap")
+    [alt text](/Tp%201/img/nc-tcp.png "nc-tcap")
 
     * Ici nous avons des requêtes TCP qui passe par un tunnel cette fois-ci et nous avons un 'accusé de réception' a contrario du protocole UDP
 
@@ -385,7 +385,7 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
     ```
     
     [Voir firewall.pcap](/Tp%201/pcap/firewall.pcap)
-    ![alt text](/TP1/screens/firewall.png "firewall-tcap")
+    ![alt text](/Tp%201/img/firewall.png "firewall-tcap")
 
 # III. Routage statique simple 
 
