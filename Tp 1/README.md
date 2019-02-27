@@ -144,7 +144,7 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
     0 packets dropped by kernel
  
  [Voir ping.pcap](/Tp%201/pcap/ping.pcap)
- 
+ ![alt text](/Tp%201/screens/ping.PNG "Whireshark2")
 
 ## Communication simple entre deux machines
 
@@ -209,7 +209,7 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
         10.1.1.3 dev enp0s8 lladdr 08:00:27:26:2e:dc REACHABLE
         ```
     [Voir ping-2.pcap](/Tp%201/pcap/ping-2.pcap)
-    ![alt text](/Tp%201/screens/ping-2.png "Whireshark2")
+    ![alt text](/Tp%201/screens/ping-2.PNG "Whireshark2")
     
 ### UDP
 
@@ -241,7 +241,7 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
 
     ```
 
-    [udp chat](/Tp%201/img/udp.png "udp")
+    [udp chat](/Tp%201/img/udp.PNG "udp")
 
 * Sur client1 (2nd shell) : 
 
@@ -271,7 +271,7 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
 
     [Voir nc-udp.pcap](/Tp%201/pcap/nc-udp.pcap)
 
-    [nc-udp](/Tp%201/img/nc-udp.png "nc-udp")
+    [nc-udp](/Tp%201/img/nc-udp.PNG "nc-udp")
 
     * Il y a bien une transmission de données faites entre un client et un serveur par le protocole UDP.
 
@@ -338,7 +338,7 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
 
     [Voir nc-tcp.pcap](/Tp%201/pcap/nc-tcp.pcap)
 
-    [nc-tcap](/Tp%201/img/nc-tcp.png "nc-tcap")
+    [nc-tcap](/Tp%201/img/nc-tcp.PNG "nc-tcap")
 
     * Ici nous avons des requêtes TCP qui passe par un tunnel cette fois-ci et nous avons un 'accusé de réception' a contrario du protocole UDP
 
@@ -385,7 +385,7 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
     ```
     
     [Voir firewall.pcap](/Tp%201/pcap/firewall.pcap)
-    ![firewall-tcap](/Tp%201/img/firewall.png "firewall-tcap")
+    ![firewall-tcap](/Tp%201/img/firewall.PNG "firewall-tcap")
 
 # III. Routage statique simple 
 
@@ -405,6 +405,8 @@ Ajouter d'une route statique sur net2 :
 ```
 10.1.2.0/30 via 10.1.1.2 dev enp0s9
 ```
+
+<!--(1)QY1_-7n -->
 
 ou en faisant un :
 
