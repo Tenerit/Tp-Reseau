@@ -208,7 +208,7 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
         10.1.1.1 dev enp0s8 lladdr 0a:00:27:00:00:06 REACHABLE
         10.1.1.3 dev enp0s8 lladdr 08:00:27:26:2e:dc REACHABLE
         ```
-    [Voir ping-2.pcap](/TP1/pcap/ping-2.pcap)
+    [Voir ping-2.pcap](/TP%201/pcap/ping-2.pcap)
     ![alt text](/TP1/screens/ping-2.png "Whireshark2")
     
 ### UDP
@@ -269,9 +269,9 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
     0 packets dropped by kernel
     ```
 
-    <[Voir nc-udp.pcap](/TP1/pcap/nc-udp.pcap)
+    <[Voir nc-udp.pcap](/TP%201/pcap/nc-udp.pcap)
 
-    [alt text](/TP1/screens/nc-udp.png "nc-udp")
+    [alt text](/TP%201/screens/nc-udp.png "nc-udp")
 
     * Il y a bien une transmission de données faites entre un client et un serveur par le protocole UDP.
 
@@ -336,7 +336,7 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
     0 packets dropped by kernel
     ```
 
-    <[Voir nc-tcp.pcap](/TP1/pcap/nc-tcp.pcap)
+    <[Voir nc-tcp.pcap](/TP%201/pcap/nc-tcp.pcap)
 
     [alt text](/TP1/screens/nc-tcp.png "nc-tcap")
 
@@ -384,7 +384,7 @@ VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
     0 packets dropped by kernel
     ```
     
-    [Voir firewall.pcap](/TP1/pcap/firewall.pcap)
+    [Voir firewall.pcap](/Tp%201/pcap/firewall.pcap)
     ![alt text](/TP1/screens/firewall.png "firewall-tcap")
 
 # III. Routage statique simple 
