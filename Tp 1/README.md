@@ -23,6 +23,11 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
 * [III. Routage statique simple](#iii-routage-statique-simple)
 
 
+Machine | `net1` | `net2`
+--- | --- | ---
+PC | `10.1.1.1/24` | `10.1.2.1/30`
+VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
+
 
 # I. Exploration du réseau d'une machine CentOS
 
@@ -138,7 +143,7 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
     10 packets received by filter
     0 packets dropped by kernel
  
- //Screen wireshark
+ [Voir ping.pcap](/TP1/pcap/ping.pcap)
  
 
 ## Communication simple entre deux machines
@@ -203,7 +208,9 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
         10.1.1.1 dev enp0s8 lladdr 0a:00:27:00:00:06 REACHABLE
         10.1.1.3 dev enp0s8 lladdr 08:00:27:26:2e:dc REACHABLE
         ```
-
+    [Voir ping-2.pcap](/TP1/pcap/ping-2.pcap)
+    ![alt text](/TP1/screens/ping-2.png "Whireshark2")
+    
 ### UDP
 
 * Sur client1 :
@@ -241,7 +248,7 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
     ```
     ss -unp
     Recv-Q Send-Q Local Address:Port               Peer Address:Port              
-    0      0      10.1.1.2:8888               10.1.1.3:43889              users:(("nc",pid=1512,fd=4))
+    0      0      10.1.1.2:8888               10.1.1.3:43841              users:(("nc",pid=1512,fd=4))
     ```
 
 * Sur client2 (2nd shell) : 
@@ -249,7 +256,7 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
     ```
     ss -unp
     Recv-Q Send-Q Local Address:Port               Peer Address:Port              
-    0      0      10.1.1.3:43889             10.1.1.2:8888                users:(("nc",pid=1494,fd=3))
+    0      0      10.1.1.3:43841             10.1.1.2:8888                users:(("nc",pid=1494,fd=3))
     ```
 
 * Sur le client1 (3eme shell) : 
@@ -262,9 +269,9 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
     0 packets dropped by kernel
     ```
 
-    <!--[Voir nc-udp.pcap](/TP1/pcap/nc-udp.pcap)-->
+    <[Voir nc-udp.pcap](/TP1/pcap/nc-udp.pcap)
 
-    <!--![alt text](/TP1/screens/nc-udp.png "nc-udp")-->
+    [alt text](/TP1/screens/nc-udp.png "nc-udp")
 
     * Il y a bien une transmission de données faites entre un client et un serveur par le protocole UDP.
 
@@ -329,9 +336,9 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
     0 packets dropped by kernel
     ```
 
-    <!--[Voir nc-tcp.pcap](/TP1/pcap/nc-tcp.pcap)-->
+    <[Voir nc-tcp.pcap](/TP1/pcap/nc-tcp.pcap)
 
-    <!--![alt text](/TP1/screens/nc-tcp.png "nc-tcap")-->
+    [alt text](/TP1/screens/nc-tcp.png "nc-tcap")
 
     * Ici nous avons des requêtes TCP qui passe par un tunnel cette fois-ci et nous avons un 'accusé de réception' a contrario du protocole UDP
 
@@ -376,6 +383,9 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
     10 packets received by filter
     0 packets dropped by kernel
     ```
+    
+    [Voir firewall.pcap](/TP1/pcap/firewall.pcap)
+    ![alt text](/TP1/screens/firewall.png "firewall-tcap")
 
 # III. Routage statique simple 
 
