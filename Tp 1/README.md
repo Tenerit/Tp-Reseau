@@ -106,7 +106,7 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
     ```
     ip neigh show
 
-    10.1.1.0 dev enp0s8 lladdr 0a:00:27:00:00:06 REACHABLE
+    10.0.2.2 dev enp0s3 lladdr 52:54:00:12:35:02 REACHABLE
     ```
 
     * Cette ligne veut dire que j'ai déjà discuté avec la machine en `10.1.1.0` qui est sur le même réseau.
@@ -124,7 +124,7 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
     ```
     ip neigh show
 
-    10.1.1.0 dev enp0s8 lladdr 0a:00:27:00:00:06 REACHABLE
+    10.0.2.2 dev enp0s3 lladdr 52:54:00:12:35:02 REACHABLE
     ```
 
 ### Capture réseau
@@ -132,8 +132,7 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
 * On capture 10 packets
 
     ```
-    sudo tcpdump -i enp0s9 -w ping.pcap
-    [sudo] Mot de passe de tener : 
+    sudo tcpdump -i enp0s9 -w ping.pcap 
     tcpdump: listening on enp0s9, link-type EN10MB (Ethernet), capture size 262144 bytes
     ^C10 packets captured
     10 packets received by filter
@@ -204,7 +203,6 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
         10.1.1.1 dev enp0s8 lladdr 0a:00:27:00:00:06 REACHABLE
         10.1.1.3 dev enp0s8 lladdr 08:00:27:26:2e:dc REACHABLE
         ```
-        _10.1.1.3 vient de s'ajouter !_
 
 ### UDP
 
@@ -215,9 +213,9 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
         ```
         sudo firewall-cmd --add-port=8888/udp --permanent
         [sudo] password for tener:
-        
+        ****
         success
-
+        ****
         sudo firewall-cmd --reload
         success
         ```
@@ -236,8 +234,7 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
 
     ```
 
-    ![alt text](/TP1/screens/chat.png "chat")
-    _Le tchat marche bien_
+    <!--![alt text](/TP1/screens/chat.png "chat")-->
 
 * Sur client1 (2nd shell) : 
 
@@ -260,16 +257,16 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
     ```
     sudo tcpdump -i enp0s8 -w nc-udp.pcap
     tcpdump: listening on enp0s8, link-type EN10MB (Ethernet), capture size 262144 bytes
-    ^C15 packets captured
-    15 packets received by filter
+    ^C6 packets captured
+    6 packets received by filter
     0 packets dropped by kernel
     ```
 
-    [Voir nc-udp.pcap](/TP1/pcap/nc-udp.pcap)
+    <!--[Voir nc-udp.pcap](/TP1/pcap/nc-udp.pcap)-->
 
-    ![alt text](/TP1/screens/nc-udp.png "nc-udp")
+    <!--![alt text](/TP1/screens/nc-udp.png "nc-udp")-->
 
-    * Nous voyons des transmission de données faites entre un client et un serveur par le protocole UDP (aucun tunnel).
+    * Il y a bien une transmission de données faites entre un client et un serveur par le protocole UDP.
 
 
 ### TCP 
@@ -281,9 +278,9 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
         ```
         sudo firewall-cmd --add-port=8888/tcp --permanent
         [sudo] password for tener:
-        
+        ****
         success
-
+        ****
         sudo firewall-cmd --reload
         success
         ```
@@ -325,17 +322,16 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
 * Sur client1 (3eme shell) : 
 
     ```
-    sudo tcpdump -i enp0s8 -w nc-tcp.pcap
-    [sudo] Mot de passe de tener : 
+    sudo tcpdump -i enp0s8 -w nc-tcp.pcap 
     tcpdump: listening on enp0s8, link-type EN10MB (Ethernet), capture size 262144 bytes
     ^C15 packets captured
     15 packets received by filter
     0 packets dropped by kernel
     ```
 
-    [Voir nc-tcp.pcap](/TP1/pcap/nc-tcp.pcap)
+    <!--[Voir nc-tcp.pcap](/TP1/pcap/nc-tcp.pcap)-->
 
-    ![alt text](/TP1/screens/nc-tcp.png "nc-tcap")
+    <!--![alt text](/TP1/screens/nc-tcp.png "nc-tcap")-->
 
     * Ici nous avons des requêtes TCP qui passe par un tunnel cette fois-ci et nous avons un 'accusé de réception' a contrario du protocole UDP
 
@@ -349,12 +345,15 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
         sudo firewall-cmd --remove-port=8888/udp --permanent
         [sudo] password for tener:
         success
-
+        ****
+        ```
+        On reload pour que les changengements soient pris en compte
+        ```
         sudo firewall-cmd --reload
         success
         ```
 
-    * On lance netcat pour qu'il écoute sur le port TCP 8888 : 
+    * On lance netcat sur le port TCP 8888 : 
 
         ```
         nc -u -l 8888
@@ -371,8 +370,7 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
 * Sur client1 (2nd shell) : 
 
     ```
-    sudo tcpdump -i enp0s8 -w firewall.pcap
-    [sudo] Mot de passe de tener : 
+    sudo tcpdump -i enp0s8 -w firewall.pcap 
     tcpdump: listening on enp0s8, link-type EN10MB (Ethernet), capture size 262144 bytes
     ^C10 packets captured
     10 packets received by filter
@@ -386,9 +384,7 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
 On transforme client1 en routeur 
 
 `sudo sysctl -w net.ipv4.ip_forward=1
-[sudo] Mot de passe de tener :
-
-net.ipv4.ip_forward = 1`
+ net.ipv4.ip_forward = 1`
 
 * Sur client2 : 
 
@@ -408,10 +404,9 @@ ensuite on teste avec un ping
 
 `ping 10.1.2.2
 PING 10.1.2.2 (10.1.2.2) 56(84) bytes of data.
-64 bytes from 10.1.2.2: icmp_seq=1 ttl=64 time=0.915 ms
-64 bytes from 10.1.2.2: icmp_seq=2 ttl=64 time=0.629 ms
-64 bytes from 10.1.2.2: icmp_seq=3 ttl=64 time=0.730 ms
-64 bytes from 10.1.2.2: icmp_seq=4 ttl=64 time=0.984 ms
+64 bytes from 10.1.2.2: icmp_seq=1 ttl=64 time=0.922 ms
+64 bytes from 10.1.2.2: icmp_seq=2 ttl=64 time=0.529 ms
+
 `
 
 
