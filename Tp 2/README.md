@@ -1,4 +1,3 @@
-Tp-2
 <!--(2)PIUoCH-->
 ## Sommaire
 
