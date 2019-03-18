@@ -304,9 +304,8 @@ LISTEN      0      128      *:22                   *:*                   users:(
 LISTEN      0      100    127.0.0.1:25                   *:*                   users:(("master",pid=1173,fd=13))
 
 ```
-hessyeon d'acceder depuis client1 au serv Web
+Verification
 
-'
 ```
 curl 10.2.2.10
 
@@ -426,6 +425,8 @@ curl 10.2.2.10
         </div>
     </body>
 </html>
+
+```
   
   
   
