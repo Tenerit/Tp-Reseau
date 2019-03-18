@@ -19,8 +19,86 @@ Tp-2
 
 ## 1. Création des VMs et adressage IP
 
+   Clones du patron de VM 
+    * client1.net1.b2
+        * SANS carte NAT
+    * server1.net2.b2
+        * SANS carte NAT
+    * router1.net12.b2
+        * AVEC carte NAT
+    * router2.net12.b2
+        * SANS carte NAT
 
-   ///////////
+
+### Tableau d'adressage IP
+
+Machine | `net1` | `net2` | `net12`
+--- | --- | --- | ---
+PC | `10.2.1.1/24` | `10.2.2.1/24` | `10.2.12.1/29`
+`client1.net1.b2` | `10.2.1.10/24` | X | X
+`server1.net2.b2` | X | `10.2.2.10/24` | X
+`router1.net12.b2` | `10.2.1.254/24` | X | `10.2.12.2/29`
+`router2.net12.b2` | X | `10.2.2.254/24` | `10.2.12.3/29`
+
+### Shéma joli
+```
+        router1.net12.b2                   router2.net12.b2
+            +-----+                             +-----+
+            |     |10.2.12.2/29     10.2.12.3/29|     |
+            |     +-----------------------------+     |
+            +-----+                             +-----+
+   10.2.1.254/24|                                   |10.2.2.254/24
+                |                                   |
+                |                                   |
+                |                                   |
+                |                                   |
+                |                                   |
+    10.2.1.10/24|                                   |10.2.2.10/24
+            +-----+                             +-----+
+            |     |                             |     |
+            |     |                             |     |
+            +-----+                             +-----+
+        client1.net1.b2                   server1.net2.b2
+```
+
+* 3 réseaux host only 
+    * net1 : ```10.2.1.0/24```
+    
+    * net2 : ```10.2.2.0/24```
+
+    * net12 : ```10.2.12.0/29```
+
+### Checklist IP VMs
+
+Exemple pour client1
+
+- Definition ip statique
+    ```
+    NAME=enp0s8
+    DEVICE=enp0s8
+
+    BOOTPROTO=static
+    ONBOOT=yes
+
+    IPADDR=10.2.1.10
+    NETMASK=255.255.255.0
+    ```
+
+- Definition du hostname 
+    ```
+    sudo hostname client1
+    ```
+
+- Remplissage de /etc/hosts
+    ```
+    127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+    ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+    10.2.2.10   server1 server1.net2.b2
+    10.2.1.254  router1 router1.net1.b2
+    10.2.2.254  router2 router2.net2.b2
+    ```
+
+
 
 ## 2. Routage statique
 
