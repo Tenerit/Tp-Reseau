@@ -303,13 +303,11 @@ LISTEN      0      128      *:80                   *:*                   users:(
 LISTEN      0      128      *:22                   *:*                   users:(("sshd",pid=940,fd=3))
 LISTEN      0      100    127.0.0.1:25                   *:*                   users:(("master",pid=1173,fd=13))
 
-```
-Verification
+- Verification
+
 
 ```
-curl 10.2.2.10
-
-```
+`curl 10.2.2.10`
 
   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
