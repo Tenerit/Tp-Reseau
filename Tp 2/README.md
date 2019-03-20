@@ -220,31 +220,30 @@ Installation :
 Modification du fichier /ect/dhcp/dhcpd.conf
 
 ```
-# dhcpd.conf
+	#dhcpd.conf
+	# option definitions common to all supported networks
+	option domain-name "net1.tp2";
 
-# option definitions common to all supported networks
-option domain-name "net1.tp2";
+	default-lease-time 600;
+	max-lease-time 7200;
 
-default-lease-time 600;
-max-lease-time 7200;
+	 # If this DHCP server is the official DHCP server for the local
+	 # network, the authoritative directive should be uncommented.
+	 authoritative;
 
-# If this DHCP server is the official DHCP server for the local
-# network, the authoritative directive should be uncommented.
-authoritative;
+	 # Use this to send dhcp log messages to a different log file (you also
+	 # have to hack syslog.conf to complete the redirection).
+	log-facility local7;
 
-# Use this to send dhcp log messages to a different log file (you also
-# have to hack syslog.conf to complete the redirection).
-log-facility local7;
-
-subnet 10.2.1.0 netmask 255.255.255.0 {
-  range 10.2.1.50 10.2.1.70;
-  option domain-name "net1.tp2";
-  option routers 10.2.1.254;
-  option broadcast-address 10.2.1.255;
-  option domain-name-servers 8.8.8.8;
-}
-
+	subnet 10.2.1.0 netmask 255.255.255.0 {
+	  range 10.2.1.50 10.2.1.70;
+	  option domain-name "net1.tp2";
+	  option routers 10.2.1.254;
+	  option broadcast-address 10.2.1.255;
+	  option domain-name-servers 8.8.8.8;
+	}
 ```
+
 On lance le dhcp
 `sudo systemctl start dhcpd`
 Teste
@@ -371,8 +370,7 @@ sucess
 ```
  - Lancement du serveur web
 
-```
-sudo systemctl start nginx
+`sudo systemctl start nginx`
 
 Vérification que le server web soit bien lancé :
 ```
@@ -382,6 +380,7 @@ LISTEN      0      128      *:80                   *:*                   users:(
 LISTEN      0      128      *:22                   *:*                   users:(("sshd",pid=940,fd=3))
 LISTEN      0      100    127.0.0.1:25                   *:*                   users:(("master",pid=1173,fd=13))
 
+```
 - Verification
 
 
