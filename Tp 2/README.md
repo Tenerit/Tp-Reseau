@@ -174,13 +174,16 @@ On peut voir que les deux capture on une	Adresse Mac differente
 	ONBOOT=yes
 	ZONE=public
    ```
+
+   ```
    ping 8.8.8.8
    PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 	64 bytes from 8.8.8.8: icmp_seq=1 ttl=63 time=15.4 ms
 	64 bytes from 8.8.8.8: icmp_seq=2 ttl=63 time=22.1 ms
 	64 bytes from 8.8.8.8: icmp_seq=3 ttl=63 time=18.5 ms
 	^C
-	
+	```
+
 	- mise en place des zones:
 	echo 'ZONE=public' | sudo tee --append/etc/sysconfig/network-scripts/ifcfg-enp0s8
 	echo 'ZONE=internal' | sudo tee --append/etc/sysconfig/network-scripts/ifcfg-enp0s9
@@ -212,10 +215,9 @@ echo "dhcp-server.net1.b2" | sudo tee /etc/hostname
 sudo nano /etc/dhcp/dhcpd.conf
 
 Installation :
+`sudo yum install -y dhcp`
 
-sudo yum install -y dhcp
-/////
-modification du fichier /ect/dhcp/dhcpd.conf
+Modification du fichier /ect/dhcp/dhcpd.conf
 
 ```
 # dhcpd.conf
@@ -279,10 +281,10 @@ Configuration du fichier Modification dans `/etc/sysconfig/network-scripts/ifcfg
 
 -Modification du fichier `/etc/chrony.conf` Sur router1 :
 ```
-        server 0.fr.pool.ntp.org
-        server 1.fr.pool.ntp.org
-        server 2.fr.pool.ntp.org
-        server 3.fr.pool.ntp.org
+server 0.fr.pool.ntp.org
+server 1.fr.pool.ntp.org
+server 2.fr.pool.ntp.org
+server 3.fr.pool.ntp.org
 driftfile /var/lib/chrony/drift
 makestep 1.0 3
 rtcsync
