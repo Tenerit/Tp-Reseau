@@ -175,21 +175,23 @@ On peut voir que les deux capture on une	Adresse Mac differente
 	ZONE=public
    ```
 
-   ```
+```
    ping 8.8.8.8
    PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 	64 bytes from 8.8.8.8: icmp_seq=1 ttl=63 time=15.4 ms
 	64 bytes from 8.8.8.8: icmp_seq=2 ttl=63 time=22.1 ms
 	64 bytes from 8.8.8.8: icmp_seq=3 ttl=63 time=18.5 ms
 	^C
-	```
+```
 
 	- mise en place des zones:
+	```
 	echo 'ZONE=public' | sudo tee --append/etc/sysconfig/network-scripts/ifcfg-enp0s8
 	echo 'ZONE=internal' | sudo tee --append/etc/sysconfig/network-scripts/ifcfg-enp0s9
+	```
 
 	- Configuration du firewall
-
+	```
 	sudo firewall-cmd --add-interface=enp0s8 --zone=public --permanent
 
 	sudo firewall-cmd --add-interface=enp0s3 --zone=public --permanent
@@ -199,27 +201,29 @@ On peut voir que les deux capture on une	Adresse Mac differente
 	sudo firewall-cmd --add-masquerade --zone=public --permanent
 
 	sudo firewall-cmd --reload
+	```
 
 	- mise en place des routes de default
 
 	sur routeur 2:
-	sudo ip route add default via 10.2.12.2 dev enp0s9
+	`sudo ip route add default via 10.2.12.2 dev enp0s9`
 
 	sur client1: 
-	sudo ip route add default via 10.2.1.254 dev enp0s3
+	`sudo ip route add default via 10.2.1.254 dev enp0s3`
 
 ## 2. Serveur DHCP
 
 On va reconfigurer le nom de la machine (/etc/hostname)
+```
 echo "dhcp-server.net1.b2" | sudo tee /etc/hostname
 sudo nano /etc/dhcp/dhcpd.conf
+```
 
 Installation :
 `sudo yum install -y dhcp`
 
 Modification du fichier /ect/dhcp/dhcpd.conf
-
-```
+	```
 	#dhcpd.conf
 	# option definitions common to all supported networks
 	option domain-name "net1.tp2";
@@ -242,7 +246,7 @@ Modification du fichier /ect/dhcp/dhcpd.conf
 	  option broadcast-address 10.2.1.255;
 	  option domain-name-servers 8.8.8.8;
 	}
-```
+    ```
 
 On lance le dhcp
 `sudo systemctl start dhcpd`
