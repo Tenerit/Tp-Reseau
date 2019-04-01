@@ -437,7 +437,7 @@ reboot
 
         Switch1(config)#interface Ethernet0/1
         Switch1(config-if)#switchport mode access
-        Switch1(config-if)#switchport access vlan 1
+        Switch1(config-if)#switchport access vlan 10
         Switch1(config-if)#exit
 
 		Switch1(config)#interface Ethernet0/2
@@ -465,7 +465,7 @@ reboot
     ```
     Switch2(config)#interface Ethernet0/1
     Switch2(config-if)#switchport mode access
-    Switch2(config-if)#switchport access vlan 10
+    Switch2(config-if)#switchport access vlan 30
     Switch2(config-if)#exit
 
     Switch2(config)#interface Ethernet0/0
