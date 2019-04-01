@@ -275,7 +275,7 @@ Hosts | `10.3.100.0/30` | `10.3.100.4/30` | `10.3.100.8/30` | `10.3.100.12/30` |
 
 
 ##conv des vm
-
+```
 sudo /etc/sysconfig/network-scripts/ifcfg-enp0s8
 
 NAME=enp0s8
@@ -286,18 +286,18 @@ ONBOOT=yes
 
 IPADDR=10.33.10.1
 NETMASK=255.255.255.0
-````
-
+```
 et son nom de domaine :
 
-````
+```
 echo 'client1.lab3.tp4' | sudo tee /etc/hostname
 reboot
-````
+```
 
 ## configuration de base des routeurs:
 
-``` # conf t
+```
+# conf t
 (config)# interface FastEthernet <NUMERO>
 (config-if)# ip address <IP> <MASK>
 (config-if)# no shut
