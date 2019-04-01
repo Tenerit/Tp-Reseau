@@ -392,7 +392,7 @@ reboot
 
 ## Configuration du Nat
 
-	* Configuration IP sur router1 : 
+	 Configuration IP sur router1 : 
 
         ```
         R1#conf t
@@ -401,7 +401,7 @@ reboot
         R1(config-if)#no shut
         ```
 
-    * Vérification : 
+     Vérification : 
 
         ```
         R1#show ip int br
@@ -417,11 +417,11 @@ reboot
 
 
 
-## Configuration des switchs 
+## Configuration des switchs :
 
-*Configuration du switch 1 : 
+ Configuration du switch 1 : 
 
-	* Acces entre le switch1 et client1 / client2 / client3 :
+	 Acces entre le switch1 et client1 / client2 / client3 :
 
         ```
         Switch1(config)#vlan 10
@@ -451,7 +451,7 @@ reboot
         Switch1(config-if)#switchport access vlan 20
         Switch1(config-if)#exit
         ```
-	* trunk entre **router2** et **switch1** : 
+	 Trunk entre **router2** et **switch1** : 
 
         ```
         Switch1(config)#interface Ethernet0/0
