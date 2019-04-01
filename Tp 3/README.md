@@ -314,13 +314,14 @@ reboot
     ```
 * Définition d'un **router-id** pour chaque routeur :
 
-        ```
+        
         R1(config-router)# router-id 1.1.1.1
 
         R2(config-router)# router-id 2.2.2.2
 
         R3(config-router)# router-id 3.3.3.3
-        ```
+        
+
 * Partage de réseaux : 
 
         * Exemple sur router1 : 
