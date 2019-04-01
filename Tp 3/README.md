@@ -271,7 +271,7 @@ Hosts | `10.3.100.0/30` | `10.3.100.4/30` | `10.3.100.8/30` | `10.3.100.12/30` |
 
 ## IV. Lab Final
 
-[Shema](/Tp%203/screens/Shema.png)
+[Shema](/Tp%203/screens/Shema.PNG)
 [Voir ping-net12.pcap](/Tp%203/screens/Shema.PNG)
 master/Tp%203/screens/Shema.PNG
 
