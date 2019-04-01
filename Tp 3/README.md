@@ -326,21 +326,21 @@ reboot
 
         * Exemple sur router1 : 
         
-            ```
+            
             R1(config-router)#network 10.3.101.0 0.0.0.255 area 0
 			R1(config-router)#network 10.3.102.0 0.0.0.255 area 0
             R1(config-router)#network 10.3.103.0 0.0.0.255 area 0
 			R1(config-router)#network 10.3.104.0 0.0.0.255 area 0
-            ```
+            
 
 * Ajout de gateway pour que les clients et le server se ping :
 
     * Sur client3 && server1 :
 
-        ```
+        
 		GATEWAY=10.3.103.22
         GATEWAY=10.3.104.21
-        ```
+        
 
     * Sur client1 && client2 : 
 
@@ -353,35 +353,35 @@ reboot
 
         * client1 vers server1 : 
 
-            ```
+           
             [tener@client1 ~]$ ping 10.3.104.20
-            PING 10.3.102.10(10.3.102.10) 56(84) bytes of data.
-            64 bytes from 10.3.102.10: icmp_seq=1 ttl=255 time=2.62 ms
-            64 bytes from 10.3.102.10: icmp_seq=2 ttl=255 time=10.2 ms
-            64 bytes from 10.3.102.10: icmp_seq=3 ttl=255 time=7.15 ms
-            64 bytes from 10.3.102.10: icmp_seq=4 ttl=255 time=11.6 ms
-            64 bytes from 10.3.102.10: icmp_seq=5 ttl=255 time=8.4 ms
+            PING 10.3.102.10(10.3.102.20) 56(84) bytes of data.
+            64 bytes from 10.3.102.20: icmp_seq=1 ttl=255 time=2.62 ms
+            64 bytes from 10.3.102.20: icmp_seq=2 ttl=255 time=10.2 ms
+            64 bytes from 10.3.102.20: icmp_seq=3 ttl=255 time=7.15 ms
+            64 bytes from 10.3.102.20: icmp_seq=4 ttl=255 time=11.6 ms
+            64 bytes from 10.3.102.20: icmp_seq=5 ttl=255 time=8.4 ms
             ^C
-            ```
-			cl1 10.3.101.10
-			cl2 10.3.102.10
-			cl3 10.3.103.10
-			serv 10.3.104.10
+            
+			cl1 10.3.101.20
+			cl2 10.3.102.20
+			cl3 10.3.103.20
+			serv 10.3.104.20
 
 
         * server1 vers client1 : 
-
-            ```
+  
             [tener@server1 ~]$ ping 10.3.101.20
-            PING 10.3.101.10(10.3.101.10) 56(84) bytes of data.
-            64 bytes from 10.3.101.10: icmp_seq=1 ttl=255 time=3.4 ms
-            64 bytes from 10.3.101.10: icmp_seq=2 ttl=255 time=5.00 ms
-            64 bytes from 10.3.101.10: icmp_seq=3 ttl=255 time=2.69 ms
+            PING 10.3.101.10(10.3.101.20) 56(84) bytes of data.
+            64 bytes from 10.3.101.20: icmp_seq=1 ttl=255 time=3.4 ms
+            64 bytes from 10.3.101.20: icmp_seq=2 ttl=255 time=5.00 ms
+            64 bytes from 10.3.101.20: icmp_seq=3 ttl=255 time=2.69 ms
             ^C
-            ```
+           
 - Configuration de base des routeurs:
 
-``` # conf t
+``` 
+# conf t
 (config)# interface FastEthernet <NUMERO>
 (config-if)# ip address <IP> <MASK>
 (config-if)# no shut
@@ -390,7 +390,7 @@ reboot
 # show ip int br
 ```
 
-##Configuration du Nat
+## Configuration du Nat
 
 	* Configuration IP sur router1 : 
 
@@ -417,7 +417,7 @@ reboot
 
 
 
-## 4. Configuration des switchs 
+## Configuration des switchs 
 
 *Configuration du switch 1 : 
 
