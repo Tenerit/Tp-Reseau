@@ -1,11 +1,7 @@
 Projet final Sécu
 
-Sommaire
-
-Idée du projet
-
-
-point sécu
-
-
-Compte rendu
+Sommaire : 
+Mon projet
+En quoi est ce sécu
+maquette
+matereiaux et estimation du prix
