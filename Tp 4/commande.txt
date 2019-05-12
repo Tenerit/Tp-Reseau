@@ -1,204 +1,257 @@
+Permet de faire tous la config si nour avons garder des anciennes config
+show running-config
+
+Permet de voir se que tu as déjà configuré
+show vlan br
+
 switch1:
-IOU1(config)#vlan 10
-IOU1(config-vlan)#name srvcl10
-IOU1(config-vlan)#exit
 
-IOU1(config)#vlan 20
-IOU1(config-vlan)#name srvcl20
-IOU1(config-vlan)#exit
+conf t
+vlan 10
+name srvcl10
+exit
 
-IOU1(config)#interface Ethernet 0/0
-IOU1(config-if)#switchport mode access
-IOU1(config-if)#switchport access vlan 10
-IOU1(config-if)#exit
+conf t
+vlan 20
+name srvcl20
+exit
 
-IOU1(config)#interface Ethernet 0/1
-IOU1(config-if)#switchport mode access
-IOU1(config-if)#switchport access vlan 20
-IOU1(config-if)#exit
+conf t
+interface Ethernet 0/0
+switchport mode access
+switchport access vlan 10
+exit
 
-IOU1(config)#interface ethernet 0/2
-IOU1(config-if)#switchport trunk encapsulation dot1q
-IOU1(config-if)#switchport mode trunk
-IOU1(config-if)#exit
+conf t
+interface Ethernet 0/1
+switchport mode access
+switchport access vlan 20
+exit
 
-IOU1(config)#interface ethernet 0/3
-IOU1(config-if)#switchport trunk encapsulation dot1q
-IOU1(config-if)#switchport mode trunk
+conf t
+interface ethernet 0/2
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
+
+interface ethernet 0/3
+switchport trunk encapsulation dot1q
+switchport mode trunk
 
 switch2:
-IOU2(config)#vlan 30
-IOU2(config-vlan)#name salon3
-IOU2(config-vlan)#exit
 
-IOU2(config)#interface ethernet 0/0
-IOU2(config-if)#switchport mode access
-IOU2(config-if)#switchport access vlan 30
-IOU2(config-if)#exit
+conf t
+vlan 30
+name salon3
+exit
 
-IOU2(config)#interface ethernet 0/1
-IOU2(config-if)#switchport mode access
-IOU2(config-if)#switchport access vlan 30
-IOU2(config-if)#exit
+conf t
+interface ethernet 0/0
+switchport mode access
+switchport access vlan 30
+exit
 
-IOU2(config)#interface ethernet 0/2
-IOU2(config-if)#switchport mode access
-IOU2(config-if)#switchport access vlan 30
-IOU2(config-if)#exit
+conf t
+interface ethernet 0/1
+switchport mode access
+switchport access vlan 30
+exit
 
+conf t
+interface ethernet 0/2
+switchport mode access
+switchport access vlan 30
+exit
 
-IOU2(config)#interface ethernet 0/3
-IOU2(config-if)#switchport trunk encapsulation dot1q
-IOU2(config-if)#switchport mode trunk
-IOU2(config-if)#exit
+conf t
+interface ethernet 0/3
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
 
-IOU2(config)#interface ethernet 1/0
-IOU2(config-if)#switchport trunk encapsulation dot1q
-IOU2(config-if)#switchport mode trunk
-IOU2(config-if)#exit
+conf t
+interface ethernet 1/0
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
 
 switch3:
-IOU3(config)#vlan 10
-IOU3(config-vlan)#name srvcl10
-IOU3(config-vlan)#exit
+conf t
+vlan 10
+name srvcl10
+exit
 
-IOU3(config)#vlan 20
-IOU3(config-vlan)#name srvcl20
-IOU3(config-vlan)#exit
+conf t
+vlan 20
+name srvcl20
+exit
 
-IOU3(config)#interface ethernet 0/0
-IOU3(config-if)#switchport mode access
-IOU3(config-if)#switchport access vlan 20
-IOU3(config-if)#exit
+conf t
+interface ethernet 0/0
+switchport mode access
+switchport access vlan 20
+exit
 
-IOU3(config)#interface ethernet 0/1
-IOU3(config-if)#switchport mode access
-IOU3(config-if)#switchport access vlan 20
-IOU3(config-if)#exit
+conf t
+interface ethernet 0/1
+switchport mode access
+switchport access vlan 20
+exit
 
-IOU3(config)#interface ethernet 0/2
-IOU3(config-if)#switchport access vlan 10
-IOU3(config-if)#exit
+conf t
+interface ethernet 0/2
+switchport mode access
+switchport access vlan 10
+exit
 
-IOU3(config)#interface ethernet 0/3
-IOU3(config-if)#switchport trunk encapsulation dot1q
-IOU3(config-if)#switchport mode trunk
-IOU3(config-if)#exit
+conf t
+interface ethernet 0/3
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
 
-IOU3(config)#interface ethernet 1/0
-IOU3(config-if)#switchport trunk encapsulation dot1q
-IOU3(config-if)#switchport mode trunk
-IOU3(config-if)#exit
+conf t
+interface ethernet 1/0
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
 
 switch4:
-IOU4(config)#vlan 10
-IOU4(config-vlan)#name srvcl10
-IOU4(config-vlan)#exit
+show running-config
 
-IOU4(config)#vlan 20
-IOU4(config-vlan)#name srvcl20
-IOU4(config-vlan)#exit
+conf t
+vlan 10
+name srvcl10
+exit
 
-IOU4(config)#vlan 30
-IOU4(config-vlan)#name salon3
-IOU4(config-vlan)#exit
+conf t
+vlan 20
+name srvcl20
+exit
 
-IOU4(config)#interface ethernet 0/0
-IOU4(config-if)#switchport trunk encapsulation dot1q
-IOU4(config-if)#switchport mode trunk
-IOU4(config-if)#exit
+conf t
+vlan 30
+name salon3
+exit
 
-IOU4(config)#interface ethernet 0/1
-IOU4(config-if)#switchport trunk encapsulation dot1q
-IOU4(config-if)#switchport mode trunk
-IOU4(config-if)#exit
+conf t
+interface ethernet 0/0
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
 
-IOU4(config)#interface ethernet 0/3
-IOU4(config-if)#switchport trunk encapsulation dot1q
-IOU4(config-if)#switchport mode trunk
-IOU4(config-if)#exit
+conf t
+interface ethernet 0/1
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
+
+conf t
+interface ethernet 0/3
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
 
 switch5:
-IOU5(config)#vlan 10
-IOU5(config-vlan)#name srvcl10
-IOU5(config-vlan)#exit
+conf t
+vlan 10
+name srvcl10
+exit
 
-IOU5(config)#vlan 20
-IOU5(config-vlan)#name srvcl20
-IOU5(config-vlan)#exit
+conf t
+vlan 20
+name srvcl20
+exit
 
-IOU5(config)#vlan 30
-IOU5(config-vlan)#name salon3
-IOU5(config-vlan)#exit
+conf t
+vlan 30
+name salon3
+exit
 
-IOU5(config)#interface ethernet 0/0
-IOU5(config-if)#switchport trunk encapsulation dot1q
-IOU5(config-if)#switchport mode trunk
-IOU5(config-if)#exit
+conf t
+interface ethernet 0/0
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
 
-IOU5(config)#interface ethernet 0/1
-IOU5(config-if)#switchport trunk encapsulation dot1q
-IOU5(config-if)#switchport mode trunk
-IOU5(config-if)#exit
+conf t
+interface ethernet 0/1
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
 
-IOU5(config)#interface ethernet 0/3
-IOU5(config-if)#switchport trunk encapsulation dot1q
-IOU5(config-if)#switchport mode trunk
-IOU5(config-if)#exit
+conf t
+interface ethernet 0/3
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
+
+Permet de regarder la conf des routeurs
+
+show ip int br
 
 routeur1:
+conf t
+interface fastEthernet 1/0
+ip address 10.4.5.1 255.255.255.252
+no shut
+exit
 
-R1(config)#interface fastEthernet 1/0
-R1(config-if)#ip address 10.4.5.1 255.255.255.252
-R1(config-if)#no shut
-R1(config-if)#exit
-
-R1(config)#interface fastEthernet 2/0
-R1(config-if)#ip address 10.4.4.1 255.255.255.252
-R1(config-if)#no shut
-R1(config-if)#exit
+conf t
+interface fastEthernet 2/0
+ip address 10.4.4.1 255.255.255.252
+no shut
+exit
 
 
 routeur 2:
+conf t
+interface fastEthernet 1/0
+ip address 10.4.6.1 255.255.255.252
+no shut
+exit
 
-R2(config)#interface fastEthernet 1/0
-R2(config-if)#ip address 10.4.6.1 255.255.255.252
-R2(config-if)#no shut
-R2(config-if)#exit
-
-R2(config)#interface fastEthernet 2/0
-R2(config-if)#ip address 10.4.7.1 255.255.255.252
-R2(config-if)#no shut
-R2(config-if)#exit
+conf t
+interface fastEthernet 2/0
+ip address 10.4.7.1 255.255.255.252
+no shut
+exit
 
 routeur 3:
-R3(config)#interface fastEthernet 1/0
-R3(config-if)#ip address 10.4.4.2 255.255.255.252
-R3(config-if)#no shut
-R3(config-if)#exit
+conf t
+interface fastEthernet 1/0
+ip address 10.4.4.2 255.255.255.252
+no shut
+exit
 
-R3(config)#interface fastEthernet 0/0
-R3(config-if)#ip address 10.4.6.2 255.255.255.252
-R3(config-if)#no shut
-R3(config-if)#exit
+conf t
+interface fastEthernet 0/0
+ip address 10.4.6.2 255.255.255.252
+no shut
+exit
 
-R3(config)#interface fastEthernet 2/0
-R3(config-if)#ip address 10.4.8.1 255.255.255.252
-R3(config-if)#no shut
+conf t
+interface fastEthernet 2/0
+ip address 10.4.8.1 255.255.255.252
+no shut
+exit
 
 routeur 4:
 
-R4(config)#interface fastEthernet 1/0
-R4(config-if)#ip address 10.4.7.2 255.255.255.252
-R4(config-if)#no shut
-R4(config-if)#exit
+conf t
+interface fastEthernet 1/0
+ip address 10.4.7.2 255.255.255.252
+no shut
+exit
 
-R4(config)#interface fastEthernet 0/0
-R4(config-if)#ip address 10.4.4.2 255.255.255.252
-R4(config-if)#no shut
-R4(config-if)#exit
+conf t
+interface fastEthernet 0/0
+ip address 10.4.4.2 255.255.255.252
+no shut
+exit
 
-R4(config)#interface fastEthernet 2/0
-R4(config-if)#ip address 10.4.8.2 255.255.255.252
-R4(config-if)#no shut
-R4(config-if)#exit
+conf t
+interface fastEthernet 2/0
+ip address 10.4.8.2 255.255.255.252
+no shut
+exit
