@@ -18,11 +18,17 @@ Cette architecture a été conçu pour des petits entreprises (3 à 6 personnes)
 ![Shema](/Tp%204/screens/Maquette.PNG)
 
 On peut remarquer que notre architecture comporte:
+
 2 serveurs
+
 6 Pc Clients
+
 5 switchs
+
 4 routeurs (dont 2 avec firewall)
-1 1 firewall frontal de type pfsense 
+
+1 firewall frontal de type pfsense 
+
 1 Nat
 
 # III. Point sécu
