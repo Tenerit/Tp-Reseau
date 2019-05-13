@@ -3,7 +3,6 @@ Projet final Sécu
 * [I. Mon project](#i-Mon-project)
 * [II. Maquette](#ii-Maquette)
 * [III. Point sécu](#iii-Point-sécu)
-* [IV. Les Materiaux](#iv-Les-Materiaux)
 
 
 # I. Mon project
@@ -41,6 +40,7 @@ pour le firewall j'ai choisi d'installer pfSense car ça mise en place est clair 
 les problèmes que l'on peut rencontrer grâce au nombre faramineux de tuto pour pfSense mais aussi grâce à l'interphace web qui est pour moi super détailler et simple d'utilisation
 
 SPOF(single point of failure)
+
 le spof(single point of failure) est un point d'un système informatique dont le reste du système est dépendant et
 dont une panne entraîne l'arrêt complet du système.
 
@@ -48,11 +48,13 @@ Lors de la conception de notre maquette j'ai fait tres attention a avetier les s
 (routeur, switch et firewall).
 
 VLANS
+
 les VLANs(Virtual Local Area Network) perment de créer un ensemble logique isolé améliorant la sécurité deplus de séparer des départements où des groupes de travail grâce au vlan on Optimise la bande passante.
  Les VLANs amènent aussi un plus à la sécuriter des machines car les attaque utilisant le broadcast(ARP cache poisoning, DHCP spoofing, attaque smurf, MAC table overflow…) seront contenues au sein du vlan et ne sétaleront pas 
 
 
 DMZ
+
 Les services susceptibles d'être accédés depuis Internet seront situés en DMZ tels qu'un serveur web, un dns, etc,
 ce qui permeteras qu’en cas de compromission d’un des services dans la DMZ, le pirate n’aura accès qu’aux machines de la DMZ.
 Pour securiser encore plus l'architecture j'ai utiliser deux firewall pour  créer la DMZ.
