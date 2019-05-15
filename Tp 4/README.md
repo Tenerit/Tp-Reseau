@@ -1,19 +1,19 @@
-Projet final Sécu
-# Sommaire
+# Projet final Menu SÃ©cu
+## Sommaire
 * [I. Mon project](#i-Mon-project)
 * [II. Maquette](#ii-Maquette)
-* [III. Point sécu](#iii-Point-sécu)
+* [III. Point sÃ©cu](#iii-Point-sÃ©cu)
 
 
 # I. Mon project
-## Pourquoi j'ai choisi la sécu ?
-J'ai choisi de parler de securiter comme projet final car c'est un sujet qui m'intéresse vachement en ce moment.
+## Pourquoi j'ai choisi la sÃ©cu ?
+J'ai choisi de parler de securiter comme projet final car c'est un sujet qui m'intÃ©resse vachement en ce moment.
 
 Nous avons tous simplement choisis ce sujet pour mettre en pratique les notions que l'on a pu voir
-à travers les différents TPs sur une infra réelle.
+Ã  travers les diffÃ©rents TPs sur une infra rÃ©elle.
 
 # II. Maquette
-Cette architecture a été conçu pour des petits entreprises (3 à 6 personnes)
+Cette architecture a Ã©tÃ© conÃ§u pour des petits entreprises (3 Ã  6 personnes)
 
 ![Shema](/Tp%204/screens/Maquette.PNG)
 
@@ -31,38 +31,38 @@ On peut remarquer que notre architecture comporte:
 
 1 Nat
 
-# III. Point sécu
+# III. Point sÃ©cu
 ## Explication des points secu
 
 ### Firewall
 
-pour le firewall j'ai choisi d'installer pfSense car ça mise en place est clair et rapide (moins de 30 minutes) grâce au fait qu'il est open-source et donc une communauté assez ouverte reduissant fortement
-les problèmes que l'on peut rencontrer grâce au nombre faramineux de tuto pour pfSense mais aussi grâce à l'interphace web qui est pour moi super détailler et simple d'utilisation
+pour le firewall j'ai choisi d'installer pfSense car Ã§a mise en place est clair et rapide (moins de 30 minutes) grÃ¢ce au fait qu'il est open-source et donc une communautÃ© assez ouverte reduissant fortement
+les problÃ¨mes que l'on peut rencontrer grÃ¢ce au nombre faramineux de tuto pour pfSense mais aussi grÃ¢ce Ã  l'interphace web qui est pour moi super dÃ©tailler et simple d'utilisation
 
 ### SPOF
 
-le spof(single point of failure) est un point d'un système informatique dont le reste du système est dépendant et
-dont une panne entraîne l'arrêt complet du système.
+le spof(single point of failure) est un point d'un systÃ¨me informatique dont le reste du systÃ¨me est dÃ©pendant et
+dont une panne entraÃ®ne l'arrÃªt complet du systÃ¨me.
 
-Lors de la conception de notre maquette j'ai fait tres attention a avetier les spof en doublant les éléments sensible à devenir des futurs spof
+Lors de la conception de notre maquette j'ai fait tres attention a avetier les spof en doublant les Ã©lÃ©ments sensible Ã  devenir des futurs spof
 (routeur, switch et firewall).
 
 ### VLANS
 
-les VLANs(Virtual Local Area Network) perment de créer un ensemble logique isolé améliorant la sécurité deplus de séparer des départements où des groupes de travail grâce au vlan on Optimise la bande passante.
- Les VLANs amènent aussi un plus à la sécuriter des machines car les attaque utilisant le broadcast(ARP cache poisoning, DHCP spoofing, attaque smurf, MAC table overflow…) seront contenues au sein du vlan et ne sétaleront pas 
+les VLANs(Virtual Local Area Network) perment de crÃ©er un ensemble logique isolÃ© amÃ©liorant la sÃ©curitÃ© deplus de sÃ©parer des dÃ©partements oÃ¹ des groupes de travail grÃ¢ce au vlan on Optimise la bande passante.
+ Les VLANs amÃ¨nent aussi un plus Ã  la sÃ©curiter des machines car les attaque utilisant le broadcast(ARP cache poisoning, DHCP spoofing, attaque smurf, MAC table overflowâ€¦) seront contenues au sein du vlan et ne sÃ©taleront pas 
 
 
 ### DMZ
 
-Les services susceptibles d'être accédés depuis Internet seront situés en DMZ tels qu'un serveur web, un dns, etc,
-ce qui permeteras qu’en cas de compromission d’un des services dans la DMZ, le pirate n’aura accès qu’aux machines de la DMZ.
-Pour securiser encore plus l'architecture j'ai utiliser deux firewall pour  créer la DMZ.
-Le premier laisse passer uniquement le trafic vers la DMZ. Et le second n’autorise que le trafic entre la DMZ et le réseau interne.
+Les services susceptibles d'Ãªtre accÃ©dÃ©s depuis Internet seront situÃ©s en DMZ tels qu'un serveur web, un dns, etc,
+ce qui permeteras quâ€™en cas de compromission dâ€™un des services dans la DMZ, le pirate nâ€™aura accÃ¨s quâ€™aux machines de la DMZ.
+Pour securiser encore plus l'architecture j'ai utiliser deux firewall pour  crÃ©er la DMZ.
+Le premier laisse passer uniquement le trafic vers la DMZ. Et le second nâ€™autorise que le trafic entre la DMZ et le rÃ©seau interne.
 
-### Authentification forte sur les équipements:
+### Authentification forte sur les Ã©quipements:
 
-J'ai fait très attention à ce que chaque pc ne possede qu'un seul compte avec mots de passe et que n'existe aucun pc possedant le meme compte.
-Mais aussi que l’accès à certaines ressources juger sensible pour l'entreprise, ne soient accessible que par un certain utilisateur ayant le bon compte et l'équipement physique adéquat.
+J'ai fait trÃ¨s attention Ã  ce que chaque pc ne possede qu'un seul compte avec mots de passe et que n'existe aucun pc possedant le meme compte.
+Mais aussi que lâ€™accÃ¨s Ã  certaines ressources juger sensible pour l'entreprise, ne soient accessible que par un certain utilisateur ayant le bon compte et l'Ã©quipement physique adÃ©quat.
 (ex: seul le pc Client 6 a le droit de naviguer librement sur le web sans restrision sur les pages ou il navigue ou bien les telechargement qu'il peut faire)
 
